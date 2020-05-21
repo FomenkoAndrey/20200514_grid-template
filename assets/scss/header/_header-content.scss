@@ -1,0 +1,22 @@
+.header-content {
+  position: relative;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__title {
+    margin: 0 0 53px;
+
+    text-align: center;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__buttons .btn:first-of-type {
+    margin-right: $gap;
+  }
+}
