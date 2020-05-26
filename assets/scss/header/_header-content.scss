@@ -6,17 +6,55 @@
   }
 
   &__title {
-    margin: 0 0 53px;
-
     text-align: center;
+
+    @include lg-min {
+      margin: 0 0 53px;
+    }
+    @include lg {
+      margin: 0 0 43px;
+    }
   }
 
   &__buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+
+    @include sm {
+      align-items: center;
+      flex-direction: column;
+    }
   }
 
   &__buttons .btn:first-of-type {
-    margin-right: $gap;
+    @include sm-min {
+      margin-right: $gap;
+    }
+    @include sm {
+      margin-bottom: $gap;
+    }
+  }
+
+  .btn {
+    @include lg-min {
+      min-width: 250px;
+
+      font-size: 1.125rem;
+    }
+    @include lg-md {
+      min-width: 200px;
+      height: 50px;
+      padding: 13px $gap;
+
+      letter-spacing: 0.1em;
+    }
+    @include md {
+      min-width: 170px;
+      height: 40px;
+      padding: 9px $gap;
+
+      letter-spacing: 0.05em;
+    }
   }
 }

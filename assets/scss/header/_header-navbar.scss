@@ -1,16 +1,21 @@
 .header-navbar {
+  @include md {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__btn {
     position: relative;
 
     width: 30px;
     height: 22.5px;
-    margin: 25px auto;
+    margin: $gap 0;
 
     cursor: pointer;
     transition: 0.5s ease-in-out;
     transform: rotate(0deg);
 
-    @media (min-width: $md) {
+    @include md-min {
       display: none;
     }
 
@@ -74,15 +79,22 @@
 
     list-style: none;
 
-    @media (min-width: $md) {
+    @include md-min {
       display: grid;
       justify-content: end;
 
       grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
     }
+    @include md {
+      position: absolute;
+      top: 100%;
+      right: $gap * 2;
 
-    @media (max-width: $md - 0,2) {
       display: none;
+
+      text-align: right;
+
+      background-color: rgba($color-gray-dark, 0.9);
     }
   }
 

@@ -20,15 +20,13 @@ h1 {
   font-weight: 300;
   line-height: 1.2em;
 
-  @media (min-width: $lg) {
+  @include lg-min {
     font-size: 3.75rem;
   }
-
-  @media (max-width: $lg - 0.2) and (min-width: $md) {
+  @include lg-md {
     font-size: 2.5rem;
   }
-
-  @media (max-width: $md - 0.2) {
+  @include md {
     font-size: 1.875rem;
   }
 }
@@ -49,32 +47,23 @@ a {
   transition: background-color 0.5s;
   text-align: center;
   letter-spacing: 0.1em;
-
-  font-size: 1.125rem;
 }
 
 .btn {
   border: 2px solid $color-light;
   background-color: rgba($color-light, 0.1);
-
-  @media (min-width: $lg) {
-    min-width: 250px;
-  }
-
-  @media (max-width: $lg - 0.2) and (min-width: $md) {
-    min-width: 200px;
-  }
-
-  @media (max-width: $md - 0.2) {
-    min-width: 170px;
-  }
 }
 
 .btn-accent {
-  min-width: 350px;
-
   border: 2px solid $color-primary;
   background-color: rgba($color-primary, 0.8);
+
+  @include sm-min {
+    min-width: 350px;
+  }
+  @include sm {
+    width: 100%;
+  }
 }
 
 .btn:hover,
